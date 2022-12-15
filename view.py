@@ -12,22 +12,22 @@ def show_main_menu():
 
     os.system('cls')
 
-    print('\n   Меню телефонного справочника\n'+
-          '-------------------------------------\n'+
-          'Введите 1,2,3 или 4:\n'+
+    print('\n      Меню телефонного справочника\n'+
+          '----------------------------------------\n'+
+          'Введите 1, 2, 3 или 4:\n'+
           'Введите 1, чтобы отобразить все контакты\n' +
           'Введите 2, чтобы добавить новый контакт\n'+
-          'Введите 3 для поиска контактов\n'+
+          'Введите 3 для поиска контактов по имени\n'+
           'Введите 4, чтобы выйти из справочника\n'+
-          '-------------------------------------')
+          '----------------------------------------')
     
     choice = input('Введите пункт меню: ')
     
     if choice == '1':
 
-        show_contacts()
+        logger.show_contacts()
         
-        ent = input('Нажмите Enter, чтобы продолжить ...')
+        input('Нажмите Enter, чтобы продолжить ...')
         
         show_main_menu()
     
@@ -35,15 +35,15 @@ def show_main_menu():
     
         logger.enter_contact_record()
 
-        ent = input('Нажмите Enter, чтобы продолжить ...')
+        input('Нажмите Enter, чтобы продолжить ...')
 
         show_main_menu()
     
     elif choice == '3':
-        
+
         logger.search_contact_record()
 
-        ent = input('Нажмите Enter, чтобы продолжить ...')
+        input('Нажмите Enter, чтобы продолжить ...')
 
         show_main_menu()
     
@@ -55,19 +55,6 @@ def show_main_menu():
         
         print('Неправильный ввод, пожалуйста введите пункт от 1 до 4.\n')
         
-        ent = input('Нажмите Enter, чтобы продолжить ...')
+        input('Нажмите Enter, чтобы продолжить ...')
         
         show_main_menu()
-
-def show_contacts() -> str:
-
-    """Функция отображает телефонный справочник"""
-
-    with open('phonebook.txt', 'r', encoding='utf-8') as f:
-        file_contents = f.read()
-
-        if len(file_contents) == 0:
-            print('Телефонный справочник пуст')
-        
-        else:
-            print (file_contents)

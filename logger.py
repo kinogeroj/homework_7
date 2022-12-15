@@ -14,7 +14,7 @@ def search_contact_record() -> str:
     
     search_name = first_char.upper() + rem_name
     
-    with open('phonebook.txt', 'r+', encoding = 'utf-8') as f:
+    with open('phonebook.txt', 'r', encoding = 'utf-8') as f:
         file_contents = f.readlines()
      
     found = False
@@ -37,7 +37,7 @@ def search_contact_record() -> str:
 
 def input_fname() -> str:
 
-    """ Функция подставляет верхний регистр к имени """
+    """ Функция подставляет верхний регистр к Имени """
 
     fname = input('Введите имя контакта: ')
 
@@ -48,7 +48,8 @@ def input_fname() -> str:
     return first_char.upper() + rem_fname
 
 def input_lname() -> str:
-    """ Функция подставляет верхний регистр к фамилии """
+
+    """ Функция подставляет верхний регистр к Фамилии """
     
     lname = input('Введите фамилию контакта: ')
     
@@ -73,4 +74,19 @@ def enter_contact_record() -> str:
     with open('phonebook.txt', 'a', encoding = 'utf-8') as f:
         f.writelines(contact)
 
-    print( 'Контакт \n ' + contact + 'добавлен в справочник')
+    print( 'Контакт \n ' + contact + 'добавлен в справочник.')
+
+def show_contacts() -> str:
+
+    """Функция отображает телефонный справочник"""
+
+    with open('phonebook.txt', 'r', encoding='utf-8') as f:
+        file_contents = f.read()
+
+        if len(file_contents) == 0:
+            
+            print('Телефонный справочник пуст')
+        
+        else:
+            
+            print (file_contents)
