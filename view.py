@@ -4,8 +4,6 @@ import os
 
 import logger
 
-file_name = 'phonebook.txt'
-
 def show_main_menu():
 
     ' Функция показывает главное меню телефонного справочника '
