@@ -2,11 +2,9 @@
 
 import os
 
-import logger
-
 def show_main_menu():
 
-    ' Функция показывает главное меню телефонного справочника '
+    """ Функция показывает главное меню телефонного справочника """
 
     os.system('cls')
 
@@ -18,41 +16,3 @@ def show_main_menu():
           'Введите 3 для поиска контактов по имени.\n'+
           'Введите 4, чтобы выйти из справочника.\n'+
           '----------------------------------------')
-    
-    choice = input('Введите пункт меню: ')
-    
-    if choice == '1':
-
-        logger.show_contacts()
-        
-        input('Нажмите Enter, чтобы продолжить ...')
-        
-        show_main_menu()
-    
-    elif choice == '2':
-    
-        logger.enter_contact_record()
-
-        input('Нажмите Enter, чтобы продолжить ...')
-
-        show_main_menu()
-    
-    elif choice == '3':
-
-        logger.search_contact_record()
-
-        input('Нажмите Enter, чтобы продолжить ...')
-
-        show_main_menu()
-    
-    elif choice== '4':
-        
-        exit
-    
-    else:
-        
-        print('Неправильный ввод, пожалуйста введите пункт от 1 до 4.\n')
-        
-        input('Нажмите Enter, чтобы продолжить ...')
-        
-        show_main_menu()
